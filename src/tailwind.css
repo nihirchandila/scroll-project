@@ -1,0 +1,288 @@
+@import "tailwindcss";
+/* @import "tw-animate-css"; */
+@import "./custom.css";
+
+@theme {
+  --color-*: initial;
+  --color-current: currentColor;
+  --color-transparent: transparent;
+  --color-primary: #193827;
+  --color-accent-light: #efc250;
+  --color-light-background: #f7f7eb;
+  --color-accent-dark: #947534;
+  --color-light: #f7f7eb;
+  --color-light-dark: #19382708;
+
+  --font-sans: "montserrat", sans-serif;
+  --font-body: "montserrat", sans-serif;
+  --font-display: "Perandary", serif;
+  --font-accent: "Alex Brush", cursive; /*updated font name*/
+
+  /* Custom text sizes */
+  --text-*: initial;
+  --text-mobile: 3.86vw;
+  --text-ipad-mini: 2.083vw;
+  --text-ipad-pro: 1.562vw;
+  --text-desktop: 1.11vw;
+  --text-2xl: 1vw;
+  --text-10: 0.625rem;
+  --text-11: 0.6875rem;
+  --text-12: 0.75rem;
+  --text-13: 0.812rem;
+  --text-14: 0.875rem;
+  --text-15: 0.9375rem;
+  --text-16: 1rem;
+  --text-17: 1.0625rem;
+  --text-19: 1.1875rem;
+  --text-20: 1.25rem;
+  --text-27: 1.6875rem;
+  --text-29: 1.8125rem;
+  --text-24: 1.5rem;
+  --text-25: 1.5625rem;
+  --text-28: 1.75rem;
+  --text-30: 1.875rem;
+  --text-33: 2.0625rem;
+  --text-35: 2.1875rem;
+  --text-40: 2.5rem;
+  --text-45: 2.8125rem;
+  --text-48: 3rem;
+  --text-50: 3.125rem;
+  --text-55: 3.4375rem;
+  --text-60: 3.75rem;
+  --text-62: 3.875rem;
+  --text-65: 4.0625rem;
+  --text-80: 5rem;
+
+  --spacing-unset: "unset";
+}
+@layer base {
+  @font-face {
+    font-family: "Perandary";
+    src: url("./assets/fonts/Perandory-Regular.woff") format("woff"); /*changed file path*/
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  html {
+    @apply text-mobile sm:text-ipad-mini lg:text-ipad-pro xl:text-desktop 2xl:text-2xl;
+  }
+  body {
+    @apply min-h-screen body font-sans;
+  }
+}
+
+@layer components {
+  .ui-underline-anim {
+    @apply py-1 leading-none relative before:w-full before:h-px before:bg-current before:absolute before:bottom-0 before:left-0 before:transition-transform before:duration-500 before:scale-x-0 before:origin-right hover:before:origin-left hover:before:scale-x-100;
+  }
+  .ui-underline-anim.reverse {
+    @apply before:scale-x-100 hover:before:scale-x-0;
+  }
+  .app-container {
+    @apply xl:px-20 px-5;
+  }
+
+  .color-dark {
+    @apply text-accent-light bg-primary;
+  }
+  .color-primary {
+    @apply text-primary bg-light-background;
+  }
+
+  .color-accent-light {
+    @apply text-primary bg-accent-light;
+  }
+  .color-accent-dark {
+    @apply bg-accent-dark text-light;
+  }
+
+  .btn {
+    @apply px-5 py-3.5 text-14 font-sans border outline-1 outline-offset-1 leading-none transition-all duration-300;
+  }
+
+  /* Accent light color scheme */
+  .btn.color-accent-light {
+    @apply bg-accent-light text-primary outline-accent-light border border-accent-light hover:bg-accent-dark hover:text-light hover:outline-accent-dark hover:border-accent-dark;
+  }
+
+  /* Accent dark color scheme */
+  .btn.color-accent-dark {
+    @apply bg-accent-dark text-light outline-accent-dark border border-accent-dark hover:bg-primary hover:outline-primary hover:border-primary;
+  }
+
+  /* Light background color scheme */
+  .btn.color-light {
+    @apply bg-light text-primary outline-light border border-light hover:bg-accent-light hover:outline-accent-light hover:border-accent-light;
+  }
+
+  /* Dark color scheme */
+  .btn.color-dark {
+    @apply bg-primary text-accent-light outline-primary border border-primary hover:bg-accent-dark hover:outline-accent-dark hover:border-accent-dark hover:text-light;
+  }
+
+  .btn.color-primary {
+    @apply bg-primary text-accent-light outline-primary border border-primary hover:bg-accent-dark hover:outline-accent-dark hover:border-accent-dark hover:text-light;
+  }
+
+  .btn.color-primary {
+    @apply bg-primary text-accent-light outline-primary border border-primary hover:bg-accent-dark hover:outline-accent-dark hover:border-accent-dark hover:text-light;
+  }
+
+  /* Transparent/outline variants */
+  .btn.color-transparent {
+    @apply bg-transparent  outline-current border border-current;
+  }
+
+  .color-primary .btn.color-transparent {
+    @apply hover:bg-primary hover:outline-primary hover:border-primary hover:text-light;
+  }
+
+  .color-dark .btn.color-transparent {
+    @apply hover:bg-accent-dark hover:outline-accent-dark hover:border-accent-dark hover:text-light;
+  }
+
+  .color-accent-light .btn.color-transparent {
+    @apply hover:bg-accent-dark hover:outline-accent-dark hover:border-accent-dark hover:text-light;
+  }
+
+  .color-accent-dark .btn.color-transparent {
+    @apply hover:bg-light hover:outline-light hover:border-light hover:text-primary;
+  }
+
+  .color-light .btn.color-transparent {
+    @apply hover:bg-accent-light hover:outline-accent-light hover:border-accent-light hover:text-primary;
+  }
+
+  .pill {
+    @apply rounded-full min-w-56 py-3 px-3.5 flex items-center justify-center border-current border leading-none;
+  }
+}
+
+/* Typography utilities */
+
+/* Body text utilities */
+
+@utility caps {
+  @apply text-13 uppercase sm:text-11 xl:text-12;
+  font-family: var(--font-body);
+}
+
+@utility body-lg {
+  @apply xl:text-19 sm:text-14 text-14;
+  font-family: var(--font-body);
+}
+
+@utility body {
+  @apply xl:text-17 sm:text-15 text-16;
+  font-family: var(--font-body);
+  line-height: 1.3;
+}
+
+@utility body-s {
+  @apply xl:text-15 sm:text-14 text-16;
+  font-family: var(--font-body);
+  line-height: 1;
+}
+
+@utility body-xs {
+  @apply xl:text-13 sm:text-12 text-15;
+  font-family: var(--font-body);
+  line-height: 1.3;
+}
+
+@utility body-2xs {
+  @apply xl:text-14 sm:text-14 text-15;
+  font-family: var(--font-body);
+  line-height: 1.3;
+}
+
+@utility body-3xs {
+  @apply text-12 sm:text-10 xl:text-11;
+  font-family: var(--font-body);
+}
+
+/* Display text utilities */
+@utility display-1 {
+  @apply xl:text-80 sm:text-60 text-65;
+  font-family: var(--font-display);
+  line-height: 1;
+}
+
+@utility display-2 {
+  @apply xl:text-62 sm:text-50 text-45;
+  font-family: var(--font-display);
+  line-height: 1;
+}
+
+@utility display-3 {
+  @apply xl:text-60 sm:text-45 text-28;
+  font-family: var(--font-display);
+  line-height: 1;
+}
+
+@utility display-4 {
+  @apply xl:text-55 sm:text-50 text-45;
+  font-family: var(--font-display);
+  line-height: 1;
+}
+
+@utility display-5 {
+  @apply xl:text-45 sm:text-40 text-35;
+  font-family: var(--font-display);
+  line-height: 1;
+}
+
+@utility display-6 {
+  @apply xl:text-40 sm:text-35 text-35;
+  font-family: var(--font-display);
+  line-height: 1;
+}
+
+@utility display-7 {
+  @apply xl:text-33 sm:text-33 text-35;
+  font-family: var(--font-display);
+  line-height: 1;
+}
+
+/* Accent text utilities */
+
+@utility accent-xl {
+  @apply xl:text-50 sm:text-40 text-40;
+  font-family: var(--font-accent);
+  line-height: 1;
+}
+
+@utility accent-l {
+  @apply xl:text-40 sm:text-30 text-30;
+  font-family: var(--font-accent);
+  line-height: 1;
+}
+
+@utility accent-m {
+  @apply xl:text-35 sm:text-35 text-35;
+  font-family: var(--font-accent);
+  line-height: 1;
+}
+
+@utility accent-s {
+  @apply xl:text-25 sm:text-30 text-30;
+  font-family: var(--font-accent);
+  line-height: 1;
+}
+/* Custom animations */
+@keyframes slide-infinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide-infinite {
+  animation: slide-infinite 20s linear infinite;
+}
+
+
+

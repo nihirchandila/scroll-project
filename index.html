@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts for Montserrat and Alex Brush -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Alex+Brush&display=swap"
+    rel="stylesheet">
+  <title>Document</title>
+</head>
+
+<body class="color-primary leading-0">
+
+  <!-- Hero section -->
+  <div class="hero-section text-center content-center h-screen w-full relative px-4 md:px-5">
+    <!-- Centered product bottle image -->
+    <div class="bottle absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2   z-50">
+      <img class="h-[28vh] md:h-[30vw] lg:h-[20vw] lg:min-h-[350px] w-auto" src="/src/assets/images/bottle.png"
+        srcset="/src/assets/images/bottle.png 1x, /src/assets/images/bottle@2x.png 2x" alt="product image">
+    </div>
+    <h1 class="display-1">Natures secret ritual</h1>
+    <h2 class="accent-xl text-accent-dark">From Bali</h2>
+    <p class="body-lg font-medium absolute bottom-4 left-0 pl-2 text-left md:text-center w-full">100% Natural, Botanical, <strong class="md:inline-block block md:mt-0 mt-5"><a href="#" class="underline font-semibold">Body Oil</a> & <a href="#" class="underline font-semibold">Soap</a></strong></p>
+    <!-- Hero tagline hidden for animation swap -->
+    <p class="body-lg font-medium absolute bottom-4 left-0 pl-2 text-left md:text-center w-full z-52 opacity-0">100% Natural, Botanical, <strong class="md:inline-block block md:mt-0 mt-5"><a href="#" class="underline font-semibold">Body Oil</a> & <a href="#" class="underline font-semibold">Soap</a></strong>
+    </p>
+    <img class="absolute left-2 bottom-16 h-[16%] md:h-[25%] md:bottom-4 md:left-5" src="/src/assets/images/arrow.png"
+      srcset="/src/assets/images/arrow.png 1x, /src/assets/images/arrow@2x.png 2x" alt="down arrow">
+  </div>
+
+  <div class="spacer h-[100px] block md:h-[120px]"></div>
+
+  <!-- Carousel product images section -->
+  <div class="carousel-section overflow-hidden">
+    <div class="carousel flex gap-4 md:gap-8">
+      <!-- carousel image 1 -->
+      <img class="w-[35%] md:w-[25%] lg:w-[20%]" src="/src/assets/images/car-img-1.png"
+        srcset="/src/assets/images/car-img-1.png 1x, /src/assets/images/car-img-1@2x.png 2x" alt="">
+      <!-- carousel image 2 -->
+      <img class="w-[35%] md:w-[25%] lg:w-[20%]" src="/src/assets/images/car-img-2.png"
+        srcset="/src/assets/images/car-img-2.png 1x, /src/assets/images/car-img-2@2x.png 2x" alt="">
+      <!-- carousel image 3 -->
+      <img class="w-[35%] md:w-[25%] lg:w-[20%]" src="/src/assets/images/car-img-3.png"
+        srcset="/src/assets/images/car-img-3.png 1x, /src/assets/images/car-img-3@2x.png 2x" alt="">
+      <!-- carousel image 4 -->
+      <img class="w-[35%] md:w-[25%] lg:w-[20%]" src="/src/assets/images/car-img-2.png"
+        srcset="/src/assets/images/car-img-2.png 1x, /src/assets/images/car-img-2@2x.png 2x" alt="">
+      <!-- carousel image 5 -->
+      <img class="w-[35%] md:w-[25%] lg:w-[20%]" src="/src/assets/images/car-img-3.png"
+        srcset="/src/assets/images/car-img-3.png 1x, /src/assets/images/car-img-3@2x.png 2x" alt="">
+    </div>
+  </div>
+
+  <div class="spacer h-[100px] block md:h-[120px]"></div>
+
+  <!-- About section  -->
+  <div class="about-section px-4 md:px-5">
+    <div class="heading md:justify-items-end text-right md:w-[55%] lg:w-[40%] sm:w-[100] justify-items-start">
+      <h2 class="display-2">A ritual rooted<br>in nature.</h2>
+    </div>
+    <div class="content w-[100] md:w-[60%] lg:mt-[180px] mt-[250px] justify-self-end">
+      <div class="flex justify-between">
+        <!-- description and ingredient list -->
+        <div class="description w-[100] lg:w-[78%]">
+          <p class="body font-medium">Natural, with cold-pressed coconut oil, made from 108 herbs and plants - a
+            <strong>Balinese tradition</strong>, can support your self caring. Taru Bali is more than a product, it's a
+            return to natural balance.</p>
+          <p class="body font-medium my-4">Some ingredients include:</p>
+          <!-- ingredient list, triggers side images -->
+          <ul class="list-disc ml-4" id="ing-list">
+            <li class="cursor-pointer hover:opacity-50" data="turmeric">
+              <p class="body font-medium mb-2"><strong>Turmeric/Temulawak</strong> (Proven anti-inflammatory properties)
+              </p>
+            </li>
+            <li class="cursor-pointer hover:opacity-50" data="ginger">
+              <p class="body font-medium"><strong>Red Ginger</strong> (Proven anti-inflammatory properties)</p>
+            </li>
+          </ul>
+          <div class="buttons my-7 flex gap-4">
+            <!-- buttons for products and ingredient info -->
+            <a href="#" class="btn color-dark">See Products</a>
+            <a href="#" class="btn color-dark">Ingrediends Benefits</a>
+          </div>
+        </div>
+        <!-- side ingredient images (appear on hover) -->
+        <div class="ingredient-images lg:w-[20%] w-0 content-end relative">
+          <img class="opacity-0 duration-400 ease-in-out absolute left-0 bottom-0" src="/src/assets/images/Capture.PNG"
+            id="turmeric" alt="turmeric image">
+          <img class="opacity-0 duration-400 ease-in-out absolute left-0 bottom-0" src="/src/assets/images/Capture.PNG"
+            id="ginger" alt="turmeric image">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer h-[100px] block md:h-[120px]"></div>
+
+  <!-- Overlay section -->
+  <div class="overlay-section relative">
+    <div class="relative">
+      <div class="masked-ellipse relative md:h-[120px] md:translate-y-[60px] h-[70px] translate-y-[35px] z-5 bg-light clip-depth"></div>
+      <div class="h-[90vh] overflow-hidden relative">
+        <div class="background-image">
+          <!-- backgroud image for tablet and large devices -->
+          <img class="absolute w-full h-[90vh] object-cover bg-center hidden md:block" src="/src/assets/images/bg.png"
+            srcset="/src/assets/images/bg.png 1x, /src/assets/images/bg@2x.png 2x" alt="">
+          <!-- background image for mobile -->
+          <img class="absolute w-full h-[90vh] object-cover bg-center md:hidden" src="/src/assets/images/bg-mobile.png"
+            srcset="/src/assets/images/bg-mobile.png 1x, /src/assets/images/bg-mobile@2x.png 2x" alt="">
+        </div>
+        <div class="content block md:flex gap-0 absolute top-[30%] left-0 justify-center lg:px-12 md:px-2 px-6 text-light w-full">
+          <!-- brand title 1 -->
+          <div class="title md:max-w-[20%] w-auto md:mb-0 mb-4">
+            <p class="body font-medium md:text-right text-center"><strong class="font-bold">Taru</strong> (Balinese for
+              Nature)</p>
+          </div>
+          <!-- stroke svg 1 -->
+          <svg class="lg:translate-y-[-30px] md:translate-y-[-50px] ml-2 md:block hidden"
+            xmlns="http://www.w3.org/2000/svg" width="282.002" height="244.635" viewBox="0 0 282.002 244.635">
+            <path id="Path_173" data-name="Path 173"
+              d="M2542.91,548.33s81.166-59.93,159.416-59.93,153.583,59.93,153.583,59.93"
+              transform="translate(-1630.653 -1979.288) rotate(39)" fill="none" stroke="#f7f7eb" stroke-width="1" />
+          </svg>
+          <!-- brand title 2 -->
+          <div
+            class="title md:max-w-[20%] lg:translate-y-[220px] md:translate-y-[170px] md:translate-x-[-20px] w-auto md:mb-0 mb-4">
+            <p class="body font-medium text-center"><strong class="font-bold">Bali</strong> (Island Roots)</p>
+          </div>
+          <!-- stroke svg 2 -->
+          <svg class="lg:translate-y-[200px] md:translate-y-[160px] md:block hidden" xmlns="http://www.w3.org/2000/svg"
+            width="321.652" height="80.935" viewBox="0 0 321.652 80.935">
+            <path id="Path_174" data-name="Path 174" d="M0,41.444S82.567,0,162.167,0,318.4,41.444,318.4,41.444"
+              transform="translate(321.368 41.606) rotate(173)" fill="none" stroke="#f7f7eb" stroke-width="1" />
+          </svg>
+          <!-- brand title 3 -->
+          <div class="title md:max-w-[20%] w-auto lg:translate-y-[150px] md:translate-y-[120px] ">
+            <p class="body font-medium md:text-left text-center">A <strong class="font-bold">Return</strong> to the
+              Island's roots, rituals, and natural balance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- main JS file -->
+    <script type="module" src="./src/main.js"></script>
+
+</body>
+
+</html>

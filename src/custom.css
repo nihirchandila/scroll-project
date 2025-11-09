@@ -1,0 +1,16 @@
+/* elipse css for overlay section */
+@layer utilities {
+    .clip-depth {
+      clip-path: ellipse(60% 100% at 50% 0%);
+    }
+}
+/* bottle hover css */
+/* Initially, no hover effect */
+.bottle img {
+  transition: all 0.4s ease-in-out;
+}
+/* Hover only works after animation complete */
+.bottle img.animation-complete:hover {
+  scale: 1.4;
+  transform: translateY(40px);
+}
