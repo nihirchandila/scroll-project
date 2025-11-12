@@ -4,13 +4,20 @@
       clip-path: ellipse(60% 100% at 50% 0%);
     }
 }
+/* custom accent text size */
+@utility accent-2xl {
+  @apply sm:text-[50px] text-[50px] md:text-[65px] lg:text-[70px];
+  font-family: var(--font-accent);
+  line-height: 1;
+}
+
 /* bottle hover css */
 /* Initially, no hover effect */
 .bottle img {
   transition: all 0.4s ease-in-out;
+  /* transform-origin: center; won't work because the original png image of bottle is 15deg rotated to right  */
 }
 /* Hover only works after animation complete */
 .bottle img.animation-complete:hover {
-  scale: 1.4;
-  transform: translateY(40px);
+  transform: scale(1.5) translateY(95px) translateX(-11%);
 }
