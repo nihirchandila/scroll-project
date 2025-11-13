@@ -31,4 +31,10 @@
     transform: scale(1.5) translateY(95px) translateX(-8%);
   }
 }
+@media (min-width: 1740px) {
+  .carousel-section img {
+    width: 340px !important;
+  }
+}
+
 

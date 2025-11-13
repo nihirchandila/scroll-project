@@ -98,16 +98,21 @@ const cloneCount = 3;
 for (let i = 0; i < cloneCount; i++) {
   imgs.forEach(img => {
     const clone = img.cloneNode(true);
-    carousel.appendChild(clone); // append clone to carousel
+    carousel.appendChild(clone);
   });
 }
 
 const totalWidth = carousel.scrollWidth * (cloneCount / (cloneCount + 1));
+
+// Detect Firefox
+const isFirefox = navigator.userAgent.toLowerCase().includes("firefox");
+
+// Adjust duration (for firefox 30 and for others 100)
+const duration = isFirefox ? 30 : 100;
+
 gsap.to(carousel, {
-  x: -totalWidth, // scroll carousel to left
-  duration: 80, 
+  x: -totalWidth,
+  duration: duration, 
   ease: "none",
-  repeat: -1, // infinite loop
+  repeat: -1,
 });
-
-
