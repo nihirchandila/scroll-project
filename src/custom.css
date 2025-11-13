@@ -21,3 +21,14 @@
 .bottle img.animation-complete:hover {
   transform: scale(1.5) translateY(95px) translateX(-11%);
 }
+@media (max-width: 600px) {
+  .bottle img.animation-complete:hover {
+    transform: scale(1.5) translateY(95px) translateX(-18%);
+  }
+}
+@media (min-width: 1800px) {
+  .bottle img.animation-complete:hover {
+    transform: scale(1.5) translateY(95px) translateX(-8%);
+  }
+}
+

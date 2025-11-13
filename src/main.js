@@ -12,7 +12,7 @@ gsap.to(
   {
     rotate: 345, // rotate bottle on scroll
     ease: "none",
-    duration: 0.2,
+    // duration: 0.2,
     scrollTrigger: {
       onUpdate: (self) => {
       const progress = self.progress || 0; 
@@ -29,11 +29,11 @@ gsap.to(
       endTrigger: ".overlay-section",
       end: () => {
         if (window.innerWidth >= 1024) {
-          return "top 25%";
+          return "top 39%";
         } else if (window.innerWidth >= 768) { 
-          return "top 35%";
+          return "top 45%";
         } else { // small
-          return "top 38%";
+          return "top 45%";
         }
       },
       scrub: true, 
@@ -46,15 +46,22 @@ gsap.to(
 
 
 // overlay section appear animation
-gsap.to(".masked-ellipse", {
+let curve = { y: 112 };
+
+gsap.to(curve, {
+  y: 0, 
+  ease: "none",
   scrollTrigger: {
-    trigger: ".masked-ellipse",
-    start: "top 70%", 
-    toggleActions: "play none none none",
+    trigger: ".custom-shape-divider-top",
+    start: "top 70%",
+    end: "+=250", 
+    scrub: true,
+    ease: "none",
   },
-  clipPath: "ellipse(100% 0% at 50% 0%)",
-  duration: 1.2,
-  ease: "power2.inOut"
+  onUpdate: () => {
+    const newD = `M0,0V7.23C0,8.52,268.63,${curve.y},600,${curve.y}S1200,8.52,1200,7.23V0Z`;
+    document.querySelector(".shape-fill").setAttribute("d", newD);
+  }
 });
 
 
